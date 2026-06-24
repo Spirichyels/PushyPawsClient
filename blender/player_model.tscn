@@ -1,0 +1,268 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3eklki3anhrb"]
+
+[ext_resource type="PackedScene" uid="uid://dj2plbn7psfus" path="res://blender/catik.glb" id="1_o7onb"]
+
+[node name="catik" instance=ExtResource("1_o7onb")]
+
+[node name="Skeleton3D" parent="metarig" index="0"]
+bones/1/rotation = Quaternion(-0.10772976, 4.469957e-14, -2.5684766e-08, 0.9941802)
+bones/2/rotation = Quaternion(-0.034117144, -1.1913989e-07, -4.0670787e-09, 0.99941784)
+bones/3/rotation = Quaternion(0.0016271595, 2.1187413e-14, 8.3015735e-16, 0.9999987)
+bones/8/position = Vector3(0.044754297, 0.13821913, -0.009151484)
+bones/8/rotation = Quaternion(-0.13511465, 0.6940514, -0.5756184, 0.41073143)
+bones/9/rotation = Quaternion(-0.020449575, -0.06349029, 0.025842095, 0.9974383)
+bones/10/rotation = Quaternion(0.019519182, -0.08416559, -0.002679961, 0.99625707)
+bones/12/position = Vector3(-0.044754297, 0.13821913, -0.009151484)
+bones/12/rotation = Quaternion(-0.13511465, -0.6940514, 0.5756184, 0.41073143)
+bones/13/rotation = Quaternion(-0.020449575, 0.06349029, -0.025842095, 0.9974383)
+bones/14/rotation = Quaternion(0.019519182, 0.08416559, 0.002679961, 0.99625707)
+bones/19/position = Vector3(0.10975099, -0.020563962, -0.04272522)
+bones/19/rotation = Quaternion(0.8502732, -0.010444397, -0.035587426, 0.5250333)
+bones/20/rotation = Quaternion(0.5074471, 0.045639545, -0.0063979863, 0.8604496)
+bones/21/rotation = Quaternion(-0.27857387, -0.01036778, -0.00077061116, 0.96035856)
+bones/22/rotation = Quaternion(-9.721927e-08, 0.8204034, -0.57178515, -6.1938735e-08)
+bones/24/position = Vector3(-0.10975098, -0.020563949, -0.042725272)
+bones/24/rotation = Quaternion(0.8502732, 0.010444271, 0.035587598, 0.5250333)
+bones/25/rotation = Quaternion(0.50744724, -0.045639515, 0.006398, 0.86044955)
+bones/26/rotation = Quaternion(-0.27857387, 0.010367767, 0.0007706052, 0.96035856)
+bones/28/rotation = Quaternion(-0.58011276, 0.5801129, -0.40431327, -0.40431306)
+
+[node name="WGT-rig_spine_fk" parent="." index="1"]
+visible = false
+
+[node name="WGT-rig_spine_fk_001" parent="." index="2"]
+visible = false
+
+[node name="WGT-rig_spine_fk_002" parent="." index="3"]
+visible = false
+
+[node name="WGT-rig_spine_fk_003" parent="." index="4"]
+visible = false
+
+[node name="WGT-rig_tweak_spine" parent="." index="5"]
+visible = false
+
+[node name="WGT-rig_tweak_spine_001" parent="." index="6"]
+visible = false
+
+[node name="WGT-rig_tweak_spine_002" parent="." index="7"]
+visible = false
+
+[node name="WGT-rig_tweak_spine_003" parent="." index="8"]
+visible = false
+
+[node name="WGT-rig_tweak_spine_004" parent="." index="9"]
+visible = false
+
+[node name="WGT-rig_torso" parent="." index="10"]
+visible = false
+
+[node name="WGT-rig_hips" parent="." index="11"]
+visible = false
+
+[node name="WGT-rig_chest" parent="." index="12"]
+visible = false
+
+[node name="WGT-rig_breast_L" parent="." index="13"]
+visible = false
+
+[node name="WGT-rig_breast_R" parent="." index="14"]
+visible = false
+
+[node name="WGT-rig_shoulder_L" parent="." index="15"]
+visible = false
+
+[node name="WGT-rig_upper_arm_parent_L" parent="." index="16"]
+visible = false
+
+[node name="WGT-rig_upper_arm_fk_L" parent="." index="17"]
+visible = false
+
+[node name="WGT-rig_forearm_fk_L" parent="." index="18"]
+visible = false
+
+[node name="WGT-rig_hand_fk_L" parent="." index="19"]
+visible = false
+
+[node name="WGT-rig_upper_arm_ik_L" parent="." index="20"]
+visible = false
+
+[node name="WGT-rig_upper_arm_ik_target_L" parent="." index="21"]
+visible = false
+
+[node name="WGT-rig_hand_ik_L" parent="." index="22"]
+visible = false
+
+[node name="WGT-rig_VIS_upper_arm_ik_pole_L" parent="." index="23"]
+visible = false
+
+[node name="WGT-rig_upper_arm_tweak_L" parent="." index="24"]
+visible = false
+
+[node name="WGT-rig_upper_arm_tweak_L_001" parent="." index="25"]
+visible = false
+
+[node name="WGT-rig_forearm_tweak_L" parent="." index="26"]
+visible = false
+
+[node name="WGT-rig_forearm_tweak_L_001" parent="." index="27"]
+visible = false
+
+[node name="WGT-rig_hand_tweak_L" parent="." index="28"]
+visible = false
+
+[node name="WGT-rig_shoulder_R" parent="." index="29"]
+visible = false
+
+[node name="WGT-rig_upper_arm_parent_R" parent="." index="30"]
+visible = false
+
+[node name="WGT-rig_upper_arm_fk_R" parent="." index="31"]
+visible = false
+
+[node name="WGT-rig_forearm_fk_R" parent="." index="32"]
+visible = false
+
+[node name="WGT-rig_hand_fk_R" parent="." index="33"]
+visible = false
+
+[node name="WGT-rig_upper_arm_ik_R" parent="." index="34"]
+visible = false
+
+[node name="WGT-rig_upper_arm_ik_target_R" parent="." index="35"]
+visible = false
+
+[node name="WGT-rig_hand_ik_R" parent="." index="36"]
+visible = false
+
+[node name="WGT-rig_VIS_upper_arm_ik_pole_R" parent="." index="37"]
+visible = false
+
+[node name="WGT-rig_upper_arm_tweak_R" parent="." index="38"]
+visible = false
+
+[node name="WGT-rig_upper_arm_tweak_R_001" parent="." index="39"]
+visible = false
+
+[node name="WGT-rig_forearm_tweak_R" parent="." index="40"]
+visible = false
+
+[node name="WGT-rig_forearm_tweak_R_001" parent="." index="41"]
+visible = false
+
+[node name="WGT-rig_hand_tweak_R" parent="." index="42"]
+visible = false
+
+[node name="WGT-rig_neck" parent="." index="43"]
+visible = false
+
+[node name="WGT-rig_head" parent="." index="44"]
+visible = false
+
+[node name="WGT-rig_tweak_spine_005" parent="." index="45"]
+visible = false
+
+[node name="WGT-rig_thigh_parent_L" parent="." index="46"]
+visible = false
+
+[node name="WGT-rig_thigh_fk_L" parent="." index="47"]
+visible = false
+
+[node name="WGT-rig_shin_fk_L" parent="." index="48"]
+visible = false
+
+[node name="WGT-rig_foot_fk_L" parent="." index="49"]
+visible = false
+
+[node name="WGT-rig_toe_fk_L" parent="." index="50"]
+visible = false
+
+[node name="WGT-rig_thigh_ik_L" parent="." index="51"]
+visible = false
+
+[node name="WGT-rig_thigh_ik_target_L" parent="." index="52"]
+visible = false
+
+[node name="WGT-rig_foot_ik_L" parent="." index="53"]
+visible = false
+
+[node name="WGT-rig_VIS_thigh_ik_pole_L" parent="." index="54"]
+visible = false
+
+[node name="WGT-rig_thigh_tweak_L" parent="." index="55"]
+visible = false
+
+[node name="WGT-rig_thigh_tweak_L_001" parent="." index="56"]
+visible = false
+
+[node name="WGT-rig_shin_tweak_L" parent="." index="57"]
+visible = false
+
+[node name="WGT-rig_shin_tweak_L_001" parent="." index="58"]
+visible = false
+
+[node name="WGT-rig_foot_tweak_L" parent="." index="59"]
+visible = false
+
+[node name="WGT-rig_foot_spin_ik_L" parent="." index="60"]
+visible = false
+
+[node name="WGT-rig_foot_heel_ik_L" parent="." index="61"]
+visible = false
+
+[node name="WGT-rig_toe_ik_L" parent="." index="62"]
+visible = false
+
+[node name="WGT-rig_thigh_parent_R" parent="." index="63"]
+visible = false
+
+[node name="WGT-rig_thigh_fk_R" parent="." index="64"]
+visible = false
+
+[node name="WGT-rig_shin_fk_R" parent="." index="65"]
+visible = false
+
+[node name="WGT-rig_foot_fk_R" parent="." index="66"]
+visible = false
+
+[node name="WGT-rig_toe_fk_R" parent="." index="67"]
+visible = false
+
+[node name="WGT-rig_thigh_ik_R" parent="." index="68"]
+visible = false
+
+[node name="WGT-rig_thigh_ik_target_R" parent="." index="69"]
+visible = false
+
+[node name="WGT-rig_foot_ik_R" parent="." index="70"]
+visible = false
+
+[node name="WGT-rig_VIS_thigh_ik_pole_R" parent="." index="71"]
+visible = false
+
+[node name="WGT-rig_thigh_tweak_R" parent="." index="72"]
+visible = false
+
+[node name="WGT-rig_thigh_tweak_R_001" parent="." index="73"]
+visible = false
+
+[node name="WGT-rig_shin_tweak_R" parent="." index="74"]
+visible = false
+
+[node name="WGT-rig_shin_tweak_R_001" parent="." index="75"]
+visible = false
+
+[node name="WGT-rig_foot_tweak_R" parent="." index="76"]
+visible = false
+
+[node name="WGT-rig_foot_spin_ik_R" parent="." index="77"]
+visible = false
+
+[node name="WGT-rig_foot_heel_ik_R" parent="." index="78"]
+visible = false
+
+[node name="WGT-rig_toe_ik_R" parent="." index="79"]
+visible = false
+
+[node name="WGT-rig_root" parent="." index="80"]
+visible = false
