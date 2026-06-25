@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://rwid2lcj4x3l"]
+[gd_scene load_steps=7 format=3 uid="uid://rwid2lcj4x3l"]
 
 [ext_resource type="Environment" uid="uid://bp4o54oqtpief" path="res://Textures/3dSky/level_1_Environment.tres" id="2_7n274"]
+[ext_resource type="PackedScene" uid="uid://c6l30f1d30yki" path="res://addons/Sp4/debugConsole/sp4_debugConsole.tscn" id="3_646u2"]
 [ext_resource type="PackedScene" uid="uid://c7dxnyijox4in" path="res://scenes/Player/player.tscn" id="3_llao0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c1w1n"]
@@ -30,3 +31,5 @@ environment = ExtResource("2_7n274")
 
 [node name="Player" parent="." instance=ExtResource("3_llao0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1905794, 0)
+
+[node name="sp4_debugConsole" parent="." instance=ExtResource("3_646u2")]
