@@ -19,6 +19,7 @@ var is_first_person: bool = false
 var old_event = null
 
 
+
 func _camera_update():
 		if is_first_person:
 			metarig.visible = false
@@ -38,12 +39,9 @@ func _camera_update():
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * sensitivity))
-		print("поворот")
-		print(rotation.y)
 		
 		camera_pitch += event.relative.y * sensitivity
-		
-		camera_pitch = clamp(camera_pitch, -90.0, 45.0)
+		camera_pitch = clamp(camera_pitch, -80.0, 80.0)
 		_camera_update()
 		
 		
@@ -87,5 +85,14 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		$AnimationPlayer.play("Idle")
+	
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * _delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		$AnimationPlayer.play("Idle")
+		velocity.y = JUMP_VELOCITY
 	
 	move_and_slide()
