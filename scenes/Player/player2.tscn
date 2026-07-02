@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://c7dxnyijox4in"]
+[gd_scene load_steps=12 format=4 uid="uid://bbrqy4xvh12ax"]
 
-[ext_resource type="Script" uid="uid://dmeby4igbo2l5" path="res://scenes/Player/player.gd" id="1_cyojo"]
+[ext_resource type="Script" uid="uid://dmeby4igbo2l5" path="res://scenes/Player/player.gd" id="1_1fi4u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kk62l"]
 radius = 0.46240234
@@ -888,7 +888,10 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_cyojo")
+script = ExtResource("1_1fi4u")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9799247, 0.19936793, 0, -0.19936793, 0.9799247, 0, 1.868, 3)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7958832, 0)

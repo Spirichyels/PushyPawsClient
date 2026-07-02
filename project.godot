@@ -15,6 +15,10 @@ run/main_scene="uid://rwid2lcj4x3l"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Network="*res://scenes/multiplayers/Network.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/Sp4/plugin.cfg")
