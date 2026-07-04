@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://0dwqwur3e25l"]
+
+[ext_resource type="Script" uid="uid://uqfvfa8oa8qi" path="res://scenes/Screens/test_table.gd" id="1_h7duh"]
+
+[node name="TestTable" type="CanvasLayer"]
+script = ExtResource("1_h7duh")
+
+[node name="VBC" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UidLabel" type="Label" parent="VBC"]
+layout_mode = 2
+
+[node name="IdLabel" type="Label" parent="VBC"]
+layout_mode = 2
+text = "asdasd"
+
+[node name="WindowLabel" type="Label" parent="VBC"]
+layout_mode = 2
+text = "asdasd"
