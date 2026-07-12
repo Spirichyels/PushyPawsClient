@@ -78,7 +78,7 @@ func _process(delta):
 					continue
 				match str(parsed.get("type")):
 					"state":
-						_update_players(parsed["players"])
+						_update_players(parsed["players"], delta)
 					"assign_id":
 						my_id = parsed["id"]
 						my_uid = parsed.get("uid", "")
@@ -128,34 +128,62 @@ func send_input(move_x: float, move_z: float, rot: float = 0.0):
 		}
 		ws.send_text(JSON.stringify(move_msg))
 		
-		var rot_msg = {
-			"type": "rotate",
-			"yaw": rot
-		}
-		ws.send_text(JSON.stringify(rot_msg))
+		#var rot_msg = {
+			#"type": "rotate",
+			#"yaw": rot
+		#}
+		#ws.send_text(JSON.stringify(rot_msg))
 
-func _update_players(players_data):
+func _update_players(players_data, delta):
 	for pid in players_data:
 		var pos_data = players_data[pid]["pos"]
 		var pos = Vector3(pos_data[0], pos_data[1], pos_data[2])
 		var rot = players_data[pid].get("rot", 0.0)
-		if int(pid) == my_id:
+		var int_pid = int(pid)
+		
+		if int_pid == my_id:
 			if local_player:
 				local_player.global_position = pos
-				local_player.rotation.y = rot
 		else:
 			if not players.has(pid):
 				var new_player = player_scene.instantiate()
 				get_tree().current_scene.add_child(new_player)
-				new_player.set_id_label(int(pid))
+				new_player.set_id_label(int_pid)
 				players[pid] = {
 					"node": new_player,
 					"pos": pos,
 					"rot": rot
 				}
 			else:
-				players[pid]["node"].global_position = pos
-				players[pid]["node"].rotation.y = rot
-
+				if players[pid]["pos"].distance_to(pos) > 0.01:
+					players[pid]["node"].global_position = pos
+					players[pid]["pos"] = pos
+				if abs(players[pid]["rot"] - rot) > 0.01:
+					#players[pid]["node"].rotation.y = lerp_angle(players[pid]["node"].rotation.y, rot, delta * 10.0)
+					#players[pid]["rot"] = rot
+					pass
+			if abs(players[pid]["rot"] - rot) > 0.01:
+				#print("Чужой pid=", pid, " rot=", rot, " мой my_id=", my_id)
+				pass
+		if int_pid != my_id:
+			print("Чужой pid=", pid, " rot=", rot)
+		
 func set_local_player(player_node):
 	local_player = player_node
+	
+	
+func send_attack(rot: float):
+	if ws.get_ready_state() == WebSocketPeer.STATE_OPEN and my_id != -1:
+		var msg = {
+			"type": "attack",
+			"yaw": rot
+		}
+		ws.send_text(JSON.stringify(msg))
+
+func send_rotation(rot: float):
+	if ws.get_ready_state() == WebSocketPeer.STATE_OPEN and my_id != -1:
+		var msg = {
+			"type": "rotate",
+			"yaw": rot
+		}
+		ws.send_text(JSON.stringify(msg))

@@ -895,6 +895,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7958832, 0)
 shape = SubResource("CapsuleShape3D_kk62l")
 
 [node name="metarig" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="metarig"]
 bones/0/name = "spine"

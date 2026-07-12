@@ -31,6 +31,3 @@ environment = ExtResource("2_7n274")
 [node name="sp4_debugConsole" parent="." instance=ExtResource("3_646u2")]
 
 [node name="Multi" type="Node" parent="."]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9088943, 0.41702652, 0, -0.41702652, 0.9088943, 0, 6.4189568, 15.023198)
