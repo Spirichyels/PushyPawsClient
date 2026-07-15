@@ -43,7 +43,11 @@ func _ready():
 		file.close()
 		print("📂 Найден UID: ", my_uid)
 	
+	
 	var url = "ws://127.0.0.1:8000/ws"
+	if ws.get_ready_state() != WebSocketPeer.STATE_CLOSED:
+		ws.close()
+	ws = WebSocketPeer.new()
 	var err = ws.connect_to_url(url)
 	if err == OK:
 		print("Подключение...")
@@ -159,14 +163,11 @@ func _update_players(players_data, delta):
 					players[pid]["node"].global_position = pos
 					players[pid]["pos"] = pos
 				if abs(players[pid]["rot"] - rot) > 0.01:
-					#players[pid]["node"].rotation.y = lerp_angle(players[pid]["node"].rotation.y, rot, delta * 10.0)
-					#players[pid]["rot"] = rot
+					#players[pid]["node"].rotation.y = lerp_angle(players[pid]["node"].rotation.y, rot, delta * 15.0)
+					players[pid]["node"].rotation.y = rot
+					players[pid]["rot"] = rot
 					pass
-			if abs(players[pid]["rot"] - rot) > 0.01:
-				#print("Чужой pid=", pid, " rot=", rot, " мой my_id=", my_id)
 				pass
-		if int_pid != my_id:
-			print("Чужой pid=", pid, " rot=", rot)
 		
 func set_local_player(player_node):
 	local_player = player_node
@@ -186,4 +187,8 @@ func send_rotation(rot: float):
 			"type": "rotate",
 			"yaw": rot
 		}
+		ws.send_text(JSON.stringify(msg))
+func send_jump():
+	if ws.get_ready_state() == WebSocketPeer.STATE_OPEN and my_id != -1:
+		var msg = {"type": "jump"}
 		ws.send_text(JSON.stringify(msg))

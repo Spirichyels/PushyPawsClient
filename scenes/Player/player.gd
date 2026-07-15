@@ -36,6 +36,8 @@ func _camera_update():
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if Network.local_player != self:
+		return
 	if event is InputEventMouseMotion:
 		camera_yaw -= event.relative.x * sensitivity * 0.1
 		camera_pitch -= event.relative.y * sensitivity * 0.1
@@ -44,6 +46,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if Network.local_player != self:
+		return
 	if event.is_action_pressed("toggle_view"):
 		is_first_person = !is_first_person
 		_camera_update()
@@ -77,6 +81,12 @@ func _ready():
 func _physics_process(delta):
 	if not Network.connected or Network.my_id == -1:
 		return
+		
+	if Network.local_player != self:
+		return
+		
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		Network.send_jump()
 	
 	_camera_update()
 	
@@ -120,4 +130,4 @@ func _physics_process(delta):
 		rotation_sync_timer = 0.0
 		if abs(rotation.y - last_sent_rotation) > 0.01:
 			last_sent_rotation = rotation.y
-			#Network.send_rotation(rotation.y)
+			Network.send_rotation(rotation.y)
