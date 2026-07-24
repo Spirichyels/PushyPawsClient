@@ -44,6 +44,11 @@ func _ready():
 		print("📂 Найден UID: ", my_uid)
 	
 	
+	if ws.get_ready_state() != WebSocketPeer.STATE_CLOSED:
+		ws.close()
+		await get_tree().process_frame
+	ws = WebSocketPeer.new()
+		
 	var url = "ws://127.0.0.1:8000/ws"
 	if ws.get_ready_state() != WebSocketPeer.STATE_CLOSED:
 		ws.close()
@@ -123,6 +128,7 @@ func _process(delta):
 				connected = false
 				print("❌ Соединение закрыто")
 
+@warning_ignore("unused_parameter")
 func send_input(move_x: float, move_z: float, rot: float = 0.0):
 	if ws.get_ready_state() == WebSocketPeer.STATE_OPEN and my_id != -1:
 		var move_msg = {
@@ -138,6 +144,7 @@ func send_input(move_x: float, move_z: float, rot: float = 0.0):
 		#}
 		#ws.send_text(JSON.stringify(rot_msg))
 
+@warning_ignore("unused_parameter")
 func _update_players(players_data, delta):
 	for pid in players_data:
 		var pos_data = players_data[pid]["pos"]
@@ -188,7 +195,11 @@ func send_rotation(rot: float):
 			"yaw": rot
 		}
 		ws.send_text(JSON.stringify(msg))
+
 func send_jump():
 	if ws.get_ready_state() == WebSocketPeer.STATE_OPEN and my_id != -1:
 		var msg = {"type": "jump"}
+		print("Отправляю jump")
 		ws.send_text(JSON.stringify(msg))
+	else:
+		print("ws не открыт или my_id=-1")

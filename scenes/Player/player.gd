@@ -85,8 +85,9 @@ func _physics_process(delta):
 	if Network.local_player != self:
 		return
 		
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump"):
 		Network.send_jump()
+		
 	
 	_camera_update()
 	

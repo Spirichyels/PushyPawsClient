@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://rwid2lcj4x3l"]
 
 [ext_resource type="Environment" uid="uid://bp4o54oqtpief" path="res://Textures/3dSky/level_1_Environment.tres" id="2_7n274"]
-[ext_resource type="PackedScene" uid="uid://c6l30f1d30yki" path="res://addons/Sp4/debugConsole/sp4_debugConsole.tscn" id="3_646u2"]
+[ext_resource type="PackedScene" uid="uid://bhiarsjsj6b0g" path="res://Maps/Level01/Level01.tscn" id="2_llao0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c1w1n"]
 
@@ -14,6 +14,7 @@ size = Vector3(20, 1, 20)
 [node name="Test2" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+visible = false
 physics_material_override = SubResource("PhysicsMaterial_c1w1n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
@@ -28,6 +29,4 @@ transform = Transform3D(0.6946584, 0.7193398, 1.0351217e-08, -0.2636389, 0.25459
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_7n274")
 
-[node name="sp4_debugConsole" parent="." instance=ExtResource("3_646u2")]
-
-[node name="Multi" type="Node" parent="."]
+[node name="Level01" parent="." instance=ExtResource("2_llao0")]
